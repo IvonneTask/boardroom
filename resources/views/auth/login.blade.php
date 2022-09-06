@@ -50,7 +50,7 @@
                     <i class="material-icons">face</i>
                   </span>
                 </div>
-                <input type="text" name="username" class="form-control" placeholder="{{ __('Username...') }}" value="{{ old('username', null) }}" required autocomplete="username" autofocus>
+                <input type="text" name="username" class="form-control" placeholder="{{ __('Username or Email...') }}" value="{{ old('username', null) }}" required autocomplete="username" autofocus>
               </div>
               @if ($errors->has('username'))
                 <div id="username-error" class="error text-danger pl-3" for="username" style="display: block;">
