@@ -25,7 +25,7 @@ class CreateBoardroom implements CreateBoardroom
             'username' => ['required', 'string', 'max:255', Rule::unique(User::class),],
         ])->validate();
 
-        return CreateBoardroom::create([
+        return Boardroom::create([
             'reservnumber' => $input['reservnumber'],
             'username' => $input['username'],
             'reservnumber'=> $input['email'],

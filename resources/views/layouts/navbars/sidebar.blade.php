@@ -41,18 +41,20 @@
           </ul>
         </div>
       </li>
+      <!-- User and boardroom options menu -->
       <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route ('users.index')}}">
           <i class="material-icons">content_paste</i>
             <p>Users</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
+      <li class="nav-item{{ $activePage == 'Boardroom' ? ' active' : '' }}">
         <a class="nav-link" href="#">
           <i class="material-icons">library_books</i>
-            <p>{{ __('Typography') }}</p>
+            <p>{{ __('Boardroom') }}</p>
         </a>
       </li>
+       <!-- End of User and boardroom options menu -->
       <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
         <a class="nav-link" href="#">
           <i class="material-icons">bubble_chart</i>

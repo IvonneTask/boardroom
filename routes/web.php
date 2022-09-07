@@ -23,3 +23,8 @@ Route::get('/home',[App\Http\Controllers\HomeController::class, 'index'])->name(
 Route::get('/users/create',[App\Http\Controllers\UserController::class,'create'])->name('users.create');
 Route::post('/users',[App\Http\Controllers\UserController::class,'lion'])->name('users.lion');
 Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+/*
+Boardroom Routes 
+*/
+Route::get('/rooms/createroom',[App\Http\Controllers\RoomController::class,'createroom']);
+Route::post('/rooms',[App\Http\Controllers\RoomController::class,'reservation'])->name('rooms.reservation');

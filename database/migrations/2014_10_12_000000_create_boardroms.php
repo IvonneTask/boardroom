@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('boardroom', function (Blueprint $table) {
+        Schema::create('boardrooms', function (Blueprint $table) {
             $table->id('reservnumber');
             $table->string('username')->unique();
             $table->text('roomtype');
@@ -21,6 +21,8 @@ return new class extends Migration
             $table->time('start_time');
             $table->time('endtime');
             $table->string('state');
+            $table->text ('updated_at');
+            $table->text ('created_at');
         });
     }
 
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boardroom');
+        Schema::dropIfExists('boardrooms');
     }
 };

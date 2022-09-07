@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Boardrooms;
+use App\Models\Boardroom;
 use App\Models\Users;
- 
 
 class Boardroom extends Authenticatable
 {
@@ -21,6 +20,7 @@ class Boardroom extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+    
         'reservnumber',
         'username',
         'reservnumber',
@@ -29,6 +29,8 @@ class Boardroom extends Authenticatable
         'start_time',
         'endtime',
         'state',
+        'updated_at',
+        'created_at',
     ];
     
 
@@ -38,7 +40,7 @@ class Boardroom extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'start_time',
+          'start_time',
         'endtime',
     ];
 
