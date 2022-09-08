@@ -26,5 +26,6 @@ Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->nam
 /*
 Boardroom Routes 
 */
-Route::get('/rooms/createroom',[App\Http\Controllers\RoomController::class,'createroom']);
+Route::get('/rooms/createroom',[App\Http\Controllers\RoomController::class,'createroom'])->name('rooms.createroom');
 Route::post('/rooms',[App\Http\Controllers\RoomController::class,'reservation'])->name('rooms.reservation');
+Route::get('/rooms',[App\Http\Controllers\RoomController::class,'indexroom'])->name('rooms.indexroom');

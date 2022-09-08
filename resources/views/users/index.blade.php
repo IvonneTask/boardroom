@@ -41,9 +41,8 @@
                               <td>{{ $user->email }}</td>
                               <td>{{ $user->username }}</td>
                               <td>{{ $user->created_at }}</td>
-
-                               <!-- edit, delete, close buttons -->
                               <td class="td-actions text-right">
+                                <!-- edit, delete, close buttons -->
                                 <button class="btn btn-info" type="button">
                                     <i class="material-icons">person</i>
                                 </button>

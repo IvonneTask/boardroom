@@ -20,10 +20,8 @@ class Boardroom extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-    
         'reservnumber',
         'username',
-        'reservnumber',
         'roomtype',
         'reservdate',
         'start_time',

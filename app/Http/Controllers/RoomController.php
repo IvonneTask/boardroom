@@ -12,6 +12,11 @@ use Spatie\Permission\Models\Role;
 
 class RoomController extends Controller
 {
+  public function indexroom()
+  {
+     $room = Boardroom::paginate(5);
+     return view ('rooms.indexroom', compact('room'));
+  }
    public function createroom ()
   {
     return view('rooms.createroom');
@@ -20,6 +25,6 @@ class RoomController extends Controller
   public function reservation (Request $request)
   {
       Boardroom::create($request->all());
-      return redirect()->back();
+      return redirect()->route('rooms.indexroom');
   }
 }
