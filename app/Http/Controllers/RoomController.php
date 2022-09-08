@@ -26,5 +26,12 @@ class RoomController extends Controller
   {
       Boardroom::create($request->all());
       return redirect()->route('rooms.indexroom');
+      
+  }
+  public function showroom($reservnumber)
+  {
+      $room = Boardroom::find($reservnumber);
+      dd($room);
+      return view('rooms.showroom', compact('room'));
   }
 }

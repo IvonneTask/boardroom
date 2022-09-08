@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('boardrooms', function (Blueprint $table) {
-            $table->id('reservnumber');
+            $table->id('id');
             $table->string('username')->unique();
             $table->text('roomtype');
             $table->datetime('reservdate');

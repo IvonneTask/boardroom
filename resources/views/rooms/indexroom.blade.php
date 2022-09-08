@@ -34,7 +34,7 @@
                                <tbody>
                                 @foreach ($room as $Boardroom)
                                 <tr>
-                                    <td>{{$Boardroom->reservnumber}}</td>
+                                    <td>{{$Boardroom->id}}</td>
                                     <td>{{$Boardroom->username}}</td>
                                     <td>{{$Boardroom->roomtype}}</td>
                                     <td>{{$Boardroom->reservdate}}</td>

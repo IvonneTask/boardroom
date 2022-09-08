@@ -26,9 +26,9 @@ class CreateBoardroom implements CreateBoardroom
         ])->validate();
 
         return Boardroom::create([
-            'reservnumber' => $input['reservnumber'],
+            'id' => $input['id'],
             'username' => $input['username'],
-            'reservnumber'=> $input['email'],
+            'id'=> $input['email'],
             'roomtype'=> $input['roomtype'],
             'reservdate'=> $input['reservdate'],
             'start_time'=> $input['starttime'],
