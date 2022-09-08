@@ -42,32 +42,30 @@
                               <td>{{ $user->username }}</td>
                               <td>{{ $user->created_at }}</td>
                               <td class="td-actions text-right">
-                                <!-- edit, delete, close buttons -->
-                                <button class="btn btn-info" type="button">
-                                    <i class="material-icons">person</i>
-                                </button>
-                                <button class="btn btn-warning" type="button">
-                                    <i class="material-icons">edit</i>
-                                </button>
-                                <button class="btn btn-danger" type="button">
+                                
+                                <a href="{{ route('users.show', $user->id) }}" class="btn btn-info"><i class="material-icons">person</i></a>
+                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                <form action="{{ route('users.delete', $user->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Seguro?')">
+
+                                    <button class="btn btn-danger" type="submit" rel="tooltip">
                                     <i class="material-icons">close</i>
-                                </button>
-                                <!-- end of edit, delete, close buttons -->
+                                    </button>
+                                </form>
                               </td>
-                              </tr>
-                              @endforeach  
-                            </tbody>
-                            </table>
-                       </div>
+                            </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
                     </div>
-                    <div class="card-footer ml-auto">
-                        {{ $users->links() }}
-                    </div>
-                   </div> 
+                  </div>
+                  <div class="card-footer mr-auto">
+                    {{ $users->links() }}
+                  </div>
                 </div>
-               </div> 
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
- </div>
- @endsection
+@endsection
