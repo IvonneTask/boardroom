@@ -52,7 +52,10 @@
                                     <!-- edit, delete, close buttons -->
                                 <a href="{{route ('rooms.showroom', $Boardroom->id)}}" class="btn btn-info"style='width:30px; height:30px'><i class="material-icons">person</i></a>
                                 <a href="{{route ('rooms.editroom', $Boardroom->id)}}" class="btn btn-warning"style='width:30px; height:30px'><i class="material-icons">edit</i></a>
-                                <button class="btn btn-danger" type="button"style='width:30px; height:30px'>
+                                <form action="{{ route('rooms.deleteroom', $Boardroom->id) }}" method="POST"style="display: inline-block;" onsubmit="return confirm('Are you sure?')">
+                                   @csrf 
+                                   @method('DELETE')
+                                <button class="btn btn-danger" type="submit" rel="tooltip"style='width:30px; height:30px'>
                                     <i class="material-icons">close</i>
                                 </button>
                                 <!-- end of edit, delete, close buttons -->

@@ -36,3 +36,4 @@ Route::get('/rooms',[App\Http\Controllers\RoomController::class,'indexroom'])->n
 Route::get('/rooms/{room}',[App\Http\Controllers\RoomController::class,'showroom'])->name('rooms.showroom');
 Route::get('/rooms/{room}/editroom',[App\Http\Controllers\RoomController::class,'editroom'])->name('rooms.editroom');
 Route::put('/rooms/{room}',[App\Http\Controllers\RoomController::class,'updateroom'])->name('rooms.updateroom');
+Route::delete('/rooms/{room}',[App\Http\Controllers\RoomController::class,'destroyroom'])->name('rooms.deleteroom');

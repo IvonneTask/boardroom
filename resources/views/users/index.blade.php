@@ -41,12 +41,12 @@
                               <td>{{ $user->email }}</td>
                               <td>{{ $user->username }}</td>
                               <td>{{ $user->created_at }}</td>
-                              <td class="td-actions text-right">
-                                
+                              <td class="td-actions text-right">                         
                                 <a href="{{ route('users.show', $user->id) }}" class="btn btn-info"><i class="material-icons">person</i></a>
                                 <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                                <form action="{{ route('users.delete', $user->id) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Seguro?')">
-
+                                <form action="{{ route('users.delete', $user->id) }}" method="POST" style="display: inline-block;"onsubmit="return confirm('Are you sure?')">
+                                   @csrf 
+                                   @method('DELETE')
                                     <button class="btn btn-danger" type="submit" rel="tooltip">
                                     <i class="material-icons">close</i>
                                     </button>

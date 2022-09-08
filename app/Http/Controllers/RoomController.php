@@ -49,5 +49,11 @@ class RoomController extends Controller
      $room->update($dataroom);
      return redirect()->route('rooms.indexroom')->with('success','Data edited correctly');
   }
+
+  public function destroyroom(Boardroom $room)
+  {
+     $room->delete();
+     return back()->with('success','User successfully removed');
+  }
   
 }
