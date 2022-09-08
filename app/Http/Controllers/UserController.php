@@ -31,13 +31,12 @@ class UserController extends Controller
         ]);
         return redirect()->route('users.index')->with('success', 'User Created Successfully');
     }
-    public function show(User $user)
+    public function show($id)
     {
-        abort_if(Gate::denies('user_show'), 403);
-        // $user = User::findOrFail($id);
-        // dd($user);
-        $user->load('roles');
+        $user = User::find($id);
+     
         return view('users.show', compact('user'));
+
     }
 
     public function edit(User $user)
@@ -68,7 +67,7 @@ class UserController extends Controller
 
         $roles = $request->input('roles', []);
         $user->syncRoles($roles);
-        return redirect()->route('users.show', $user->id)->with('success', 'User successfully updated');
+        return redirect()->route('users.show', $user->id)->with('success', 'Usuario actualizado correctamente');
     }
 
     public function destroy(User $user)
@@ -80,6 +79,6 @@ class UserController extends Controller
         }
 
         $user->delete();
-        return back()->with('succes', 'User successfully deleted');
+        return back()->with('succes', 'Usuario eliminado correctamente');
     }
 }

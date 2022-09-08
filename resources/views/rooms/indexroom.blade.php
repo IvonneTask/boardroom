@@ -20,7 +20,7 @@
                             <div class="table-responsive">
                             <table class="table">
                                <thead class="text-primary">
-                                <th>NumR</th>
+                                <th>NReservation</th>
                                 <th>Username</th>
                                 <th>Room Type</th>
                                 <th>Reservation Date</th>
@@ -45,13 +45,11 @@
                                     <td>{{$Boardroom->created_at}}</td> 
                                     <td class="td-actions text-right">
                                     <!-- edit, delete, close buttons -->
-                                <button class="btn btn-info" type="button"style='width:55px; height:35px'>
-                                    <i class="material-icons">person</i>
-                                </button>
-                                <button class="btn btn-warning" type="button"style='width:55px; height:35px'>
+                                <a href="{{route ('rooms.showroom', $Boardroom->id)}}" class="btn btn-info"style='width:30px; height:30px'><i class="material-icons">person</i></a>
+                                <button class="btn btn-warning" type="button"style='width:30px; height:30px'>
                                     <i class="material-icons">edit</i>
                                 </button>
-                                <button class="btn btn-danger" type="button"style='width:55px; height:35px'>
+                                <button class="btn btn-danger" type="button"style='width:30px; height:30px'>
                                     <i class="material-icons">close</i>
                                 </button>
                                 <!-- end of edit, delete, close buttons -->

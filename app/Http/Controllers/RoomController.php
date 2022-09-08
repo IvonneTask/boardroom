@@ -28,10 +28,10 @@ class RoomController extends Controller
       return redirect()->route('rooms.indexroom');
       
   }
-  public function showroom($reservnumber)
+  public function showroom(Boardroom $room)
   {
-      $room = Boardroom::find($reservnumber);
-      dd($room);
+      
+      
       return view('rooms.showroom', compact('room'));
   }
 }
