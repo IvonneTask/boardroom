@@ -12,6 +12,11 @@
                             <p class="card-category">Room Reservations</p>
                             </div>
                             <div class="card-body">
+                            @if(session('success'))
+                             <div class="alert alert-success" role="success">
+                                 {{ session('success') }}
+                             </div> 
+                         @endif
                                 <div class="row">
                                     <div class="col-12 text-right">
                                         <a href="{{route('rooms.createroom')}}" class="btn btn-sm btn-facebook">Make Reservation</a>
@@ -46,9 +51,7 @@
                                     <td class="td-actions text-right">
                                     <!-- edit, delete, close buttons -->
                                 <a href="{{route ('rooms.showroom', $Boardroom->id)}}" class="btn btn-info"style='width:30px; height:30px'><i class="material-icons">person</i></a>
-                                <button class="btn btn-warning" type="button"style='width:30px; height:30px'>
-                                    <i class="material-icons">edit</i>
-                                </button>
+                                <a href="{{route ('rooms.editroom', $Boardroom->id)}}" class="btn btn-warning"style='width:30px; height:30px'><i class="material-icons">edit</i></a>
                                 <button class="btn btn-danger" type="button"style='width:30px; height:30px'>
                                     <i class="material-icons">close</i>
                                 </button>

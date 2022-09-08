@@ -64,7 +64,7 @@
                                     </tr>
                                     </tbody>
                                     </table>       
-                                        </div>
+                                </div>
                                         </p>
                                         <div class="card-description">
                                             RESERVATION. 

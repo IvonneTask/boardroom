@@ -34,3 +34,5 @@ Route::get('/rooms/createroom',[App\Http\Controllers\RoomController::class,'crea
 Route::post('/rooms',[App\Http\Controllers\RoomController::class,'reservation'])->name('rooms.reservation');
 Route::get('/rooms',[App\Http\Controllers\RoomController::class,'indexroom'])->name('rooms.indexroom');
 Route::get('/rooms/{room}',[App\Http\Controllers\RoomController::class,'showroom'])->name('rooms.showroom');
+Route::get('/rooms/{room}/editroom',[App\Http\Controllers\RoomController::class,'editroom'])->name('rooms.editroom');
+Route::put('/rooms/{room}',[App\Http\Controllers\RoomController::class,'updateroom'])->name('rooms.updateroom');

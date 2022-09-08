@@ -34,4 +34,20 @@ class RoomController extends Controller
       
       return view('rooms.showroom', compact('room'));
   }
+
+  public function editroom(Boardroom $room)
+  {
+    return view ('rooms.editroom', compact('room'));
+
+  }
+
+  public function updateroom(Request $request, $id)
+  {
+     $room=Boardroom::findOrFail($id);
+     $dataroom = $request->only('username','roomtype','reservdate','start_time','endtime','state',);
+
+     $room->update($dataroom);
+     return redirect()->route('rooms.indexroom')->with('success','Data edited correctly');
+  }
+  
 }

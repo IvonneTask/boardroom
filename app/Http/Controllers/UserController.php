@@ -41,44 +41,28 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        abort_if(Gate::denies('user_edit'), 403);
-        $roles = Role::all()->pluck('name', 'id');
-        $user->load('roles');
-        return view('users.edit', compact('user', 'roles'));
+       return view('users.edit', compact('user'));
     }
 
-    public function update(UserEditRequest $request, User $user)
+    public function update(Request $request, $id)
     {
-        // $user=User::findOrFail($id);
-        $data = $request->only('name', 'username', 'email');
-        $password=$request->input('password');
-        if($password)
-            $data['password'] = bcrypt($password);
-        // if(trim($request->password)=='')
-        // {
-        //     $data=$request->except('password');
-        // }
-        // else{
-        //     $data=$request->all();
-        //     $data['password']=bcrypt($request->password);
-        // }
+        $user=User::findOrFail($id);
+        $data = $request->only('name','username','email');
+        if(trim($request->password)=='')
+            {
+                $data=$request->except('password');
+            }
+            else{
+                $data=$request->all();
+                $data['password']=bcrypt($request->password);
 
-        $user->update($data);
-
-        $roles = $request->input('roles', []);
-        $user->syncRoles($roles);
-        return redirect()->route('users.show', $user->id)->with('success', 'Usuario actualizado correctamente');
+            }
+            $user->update($data);
+            return redirect()->route('users.index')->with('success','Data edited correctly');
     }
 
     public function destroy(User $user)
     {
-        abort_if(Gate::denies('user_destroy'), 403);
 
-        if (auth()->user()->id == $user->id) {
-            return redirect()->route('users.index');
-        }
-
-        $user->delete();
-        return back()->with('succes', 'Usuario eliminado correctamente');
     }
 }
