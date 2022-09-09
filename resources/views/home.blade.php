@@ -1,76 +1,42 @@
-@extends('layouts.main', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
+@extends('layouts.main', ['activePage' => 'Site', 'titlePage' => __('Welcome to the site')])
 
 @section('content')
   <div class="content">
     <div class="container-fluid">
       <div class="row">
-        <!-- <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card card-stats">
-            <div class="card-header card-header-warning card-header-icon">
-              <div class="card-icon">
-                <i class="material-icons">content_copy</i>
-              </div>
-              <p class="card-category">Used Space</p>
-              <h3 class="card-title">49/50
-                <small>GB</small>
-              </h3>
-            </div>
-            <div class="card-footer">
-              <div class="stats">
-                <i class="material-icons text-danger">warning</i>
-                <a href="#pablo">Get More Space...</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card card-stats">
-            <div class="card-header card-header-success card-header-icon">
-              <div class="card-icon">
-                <i class="material-icons">store</i>
-              </div>
-              <p class="card-category">Revenue</p>
-              <h3 class="card-title">$34,245</h3>
-            </div>
-            <div class="card-footer">
-              <div class="stats">
-                <i class="material-icons">date_range</i> Last 24 Hours
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card card-stats">
-            <div class="card-header card-header-danger card-header-icon">
-              <div class="card-icon">
-                <i class="material-icons">info_outline</i>
-              </div>
-              <p class="card-category">Fixed Issues</p>
-              <h3 class="card-title">75</h3>
-            </div>
-            <div class="card-footer">
-              <div class="stats">
-                <i class="material-icons">local_offer</i> Tracked from Github
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card card-stats">
-            <div class="card-header card-header-info card-header-icon">
-              <div class="card-icon">
-                <i class="fa fa-twitter"></i>
-              </div>
-              <p class="card-category">Followers</p>
-              <h3 class="card-title">+245</h3>
-            </div>
-            <div class="card-footer">
-              <div class="stats">
-                <i class="material-icons">update</i> Just Updated
-              </div>
-            </div>
-          </div>
-        </div> -->
+      <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-primary">
+                             <h4 class="card-title"> Welcome</h4>
+                            <p class="card-category">Welcome to the page where you can make the reservation of rooms to your liking.</p>
+                            </div>
+
+                            <!--Start third-->
+              <div class="col-md-12">
+                <div class="card card-user">
+                  <div class="card-body">
+                    <table class="table table-bordered table-striped">
+                      <tbody>
+                        <tr>
+                          <th>Where you can add new users</th>
+                          <td>You can make changes, view the log, and finally you can delete the user.</td>
+                        </tr>
+                        <tr>
+                          <th>You can make your room reservations we count with </th>
+                          <td>Livingrooms or Boardrooms</td>
+
+                        </tr>
+                        <tr>
+                          <th>Reservation edition </th>
+                          <td>You can change your reservation date, start time or departure time.</td>
+                         </table>
+                       </div>
+                     </div>
+                   </div>
+                <div class="card-body">       
+                <p class="card-category">All these actions can be performed either by clicking on users where the users are located or you can go to the boardroom where the reservations are located.</p>
       </div>
       <!-- <div class="row">
         <div class="col-md-4">
