@@ -25,6 +25,12 @@ class UserController extends Controller
 
     public function lion(Request $request)
     {
+        $request->validate([
+         'name' =>'required|min:3|max:5',
+         'username' =>'required',
+         'email' =>'required|email|unique:users', 
+         'password'=>'required',
+        ]);
         User::create($request->only('name', 'username', 'email')
         + [
             'password' => bcrypt($request->input('password')),

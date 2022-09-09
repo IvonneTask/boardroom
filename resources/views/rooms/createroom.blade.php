@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'Boardroom', 'titlePage' => 'Boardroom'])
+@extends('layouts.main', ['activePage' => 'Boardroom', 'titlePage' => 'Create Reservation'])
 @section('content')
  <div class="content">
     <div class="container-fluid">
@@ -12,7 +12,16 @@
                            <p class="card-category">Reserve your boardroom</p>
                         </div>
                             <!-- Username -->
-                        <div class="card-body">
+                            <div class="card-body">
+                           @if($errors->any())
+                            <div class="alert alert-danger">
+                            <ul>
+                              @foreach($errors->all() as $error)
+                                   <li>{{ $error}}</li>
+                              @endforeach
+                            </ul>
+                            </div>
+                           @endif
                             <div class="row">
                             <label for="username" class="col-sm-2 col-form-lable">Username</label>
                             <div class="col-sm-7">

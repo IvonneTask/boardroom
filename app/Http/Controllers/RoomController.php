@@ -24,6 +24,14 @@ class RoomController extends Controller
 
   public function reservation (Request $request)
   {
+      $request->validate([
+      'username'=>'required|unique:room',
+      'roomtype'=>'required',
+      'reservdate'=>'required|unique:room',
+      'start_time'=>'required',
+      'endtime'=>'required',
+      'state'=>'required',
+      ]);
       Boardroom::create($request->all());
       return redirect()->route('rooms.indexroom');
       

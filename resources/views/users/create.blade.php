@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage'=> 'users', 'titlePage' => 'Nuevo Usuario'])
+@extends('layouts.main', ['activePage'=> 'users', 'titlePage' => 'User New'])
 @section('content')
      <div class = "content">
         <div class="container-fluid">
@@ -12,10 +12,19 @@
                     <p class="card-category">Data Entry</p>
              </div>
              <div class="card-body">
+                             @if($errors->any())
+                            <div class="alert alert-danger">
+                            <ul>
+                              @foreach($errors->all() as $error)
+                                   <li>{{ $error}}</li>
+                              @endforeach
+                            </ul>
+                            </div>
+                             @endif
                 <div class="row">
                     <label for="name" class="col-sm-2 col-form-lable">Name</label>
                     <div class="col-sm-7">
-                       <input type="text" class="form-control" name="name" placeholder="Enter your Name" autofocus>
+                       <input type="text" class="form-control" name="name" placeholder="Enter your Name" autofocus required>
                     </div>
                 </div>
                 <div class="row">
